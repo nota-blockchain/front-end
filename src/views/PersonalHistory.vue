@@ -2,9 +2,9 @@
   <div class="page home">
     <GlobalNav />
     <section class="section-container">
-      <h2>교육기관검증</h2>
+      <h2>개인이력관리</h2>
       <div class="main-box">
-        컨텐츠는 여기입니다.
+        개인이력관리라구!
       </div>
     </section>
   </div>

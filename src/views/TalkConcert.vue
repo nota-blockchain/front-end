@@ -2,9 +2,9 @@
   <div class="page home">
     <GlobalNav />
     <section class="section-container">
-      <h2>교육기관검증</h2>
+      <h2>토크 콘서트 관리</h2>
       <div class="main-box">
-        컨텐츠는 여기입니다.
+        토크 콘서트가 뭐지?
       </div>
     </section>
   </div>

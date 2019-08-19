@@ -2,9 +2,9 @@
   <div class="page home">
     <GlobalNav />
     <section class="section-container">
-      <h2>교육기관검증</h2>
+      <h2>토큰 관리</h2>
       <div class="main-box">
-        컨텐츠는 여기입니다.
+        3이더를 보내보자!
       </div>
     </section>
   </div>
