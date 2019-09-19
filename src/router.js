@@ -5,6 +5,10 @@ import PersonalHistory from './views/PersonalHistory.vue'
 import UserManagement from './views/UserManagement.vue'
 import TalkConcert from './views/TalkConcert.vue'
 import TokenManagement from './views/TokenManagement.vue'
+import User from './views/User.vue'
+import EducationData from './views/EducationData.vue'
+import EducationProcess from './views/EducationProcess.vue'
+import DataPrint from './views/DataPrint.vue'
 
 Vue.use(Router)
 
@@ -36,6 +40,27 @@ export default new Router({
       path: '/tokenManagement',
       name: 'tokenManagement',
       component: TokenManagement
+    },
+    //User
+    {
+      path: '/user',
+      name: 'user',
+      component: User
+    },
+    {
+      path: '/educationData',
+      name: 'educationData',
+      component: EducationData
+    },
+    {
+      path: '/educationProcess',
+      name: 'educationProcess',
+      component: EducationProcess
+    },
+    {
+      path: '/dataPrint',
+      name: 'dataPrint',
+      component: DataPrint
     },
     {
       path: '/about',

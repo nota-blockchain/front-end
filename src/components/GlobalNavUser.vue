@@ -2,7 +2,7 @@
   <nav class="global-nav">
     <div class="logo-wrap">
       <img src="../assets/Images/logo-white.svg" />
-      <p class="user">ADMIN</p>
+      <p class="user">User</p>
     </div>
     <div class="admin-menu">
       <ul>
@@ -12,9 +12,10 @@
       </ul>
     </div>
     <div class="user-temporary">
-      <router-link to="user">user Temporary</router-link>
+      <router-link to="/">Admin Temporary</router-link>
     </div>
   </nav>
+ 
 </template>
 
 <script>
@@ -26,25 +27,21 @@ export default {
     return {
       navList: [
         {
-          title: "교육기관검증",
-          path: "/"
+          title: "이력관리",
+          path: "/user"
         },
         {
-          title: "개인이력검증",
-          path: "/personalHistory"
+          title: "교육자료",
+          path: "/educationData"
         },
         {
-          title: "회원 관리",
-          path: "/userManagement"
+          title: "교육과정 신청",
+          path: "/educationProcess"
         },
         {
-          title: "토크 콘서트 관리",
-          path: "/talkConcert"
+          title: "증명서 및 자료출력",
+          path: "/dataPrint"
         },
-        {
-          title: "토큰 관리",
-          path: "/tokenManagement"
-        }
       ]
     };
   }
