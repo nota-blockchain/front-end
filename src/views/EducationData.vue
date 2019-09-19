@@ -5,10 +5,7 @@
       <h2>교육기관</h2>
       <form>
         <div class="main-box">
-          <div class="input-wrap">
-            <span class="custom-label">교육기관명</span>
-            <input type="text" v-model="eduInstituteName" class="custom-input" />
-          </div>
+         <div class="">준비중입니다</div>
         </div>
         <ButtonCustom title="승인하기" />
       </form>
