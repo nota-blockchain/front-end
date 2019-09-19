@@ -1,0 +1,271 @@
+// font define 
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 100;
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 900;
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');
+}
+
+// initializing
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+}
+
+ul li {
+	text-decoration: none;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+// Global-Nav
+.global-nav {
+	overscroll-behavior-y: none;
+	width: 20%;
+	height: 100vh;
+	background-color: $primaryBlack;
+	color: white;
+
+	.admin-menu {
+		padding: 20px;
+
+		ul li {
+			padding-bottom: 20px;
+			padding-left: 6px;
+			font-size: 1.4rem;
+			font-weight: 300;
+
+			a {
+				text-decoration: none;
+				color: $white60;
+
+				&:hover {
+					color: $white
+				}
+			}
+		}
+	}
+
+	.logo-wrap {
+		text-align: center;
+		padding-top: 35px;
+
+		.user {
+			margin: 15px 26px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid $white20;
+			font-weight: 300;
+		}
+	}
+}
+
+.global-nav .admin-menu ul li a{
+&.router-link-exact-active.router-link-active{
+		color: #fff!important;
+}
+}
+
+//Font
+.font18 {
+	font-size: 1.8rem;
+}
+
+//text and bin
+.bin{
+	height:40px;
+}
+.user-temporary{
+	position: absolute;
+	bottom:10px;
+	left:30px;
+}
+
+// Section-Container
+.section-container {
+	overflow: scroll;
+	width: 100%;
+	height: 100vh;
+	padding-left: 90px;
+	padding-right: 90px;
+	padding-top: 52px;
+	// padding-bottom:130px;
+	background-color: $gray90;
+
+	.main-box {
+		width: 100%;
+		// min-height: 600px;
+		background-color: $white;
+		padding: 30px;
+		border-radius: 20px;
+		box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+		margin-top: 18px;
+	}
+}
+
+.custom-label {
+	font-size: 1.6rem;
+	white-space: nowrap;
+}
+
+.input-wrap {
+	display: flex;
+	max-width: 380px;
+	justify-content: space-between;
+	align-items: center;
+	margin: 26px auto;
+}
+
+.input-wrap2 {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 13px 20px;
+
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.two-line-form {
+	width: 70%;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.custom-input {
+	height: 50px;
+	min-width: 240px;
+	border: 1px solid $black02;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+
+.custom-textarea {
+	width: 100%;
+	height: 304px;
+	min-width: 240px;
+	border: 1px solid $black02;
+	border-radius: 5px;
+	padding: 10px;
+	margin-left: 50px;
+}
+
+.user-custom-textarea {
+	width: 100%;
+	height: 204px;
+	min-width: 240px;
+	border: 1px solid $black02;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.custom-btn-wrap {
+	display: flex;
+	margin: 40px auto;
+	justify-content: center;
+}
+
+.custom-btn {
+	height: 50px;
+	background-color: $primary;
+	color: $white;
+	border-radius: 50px;
+	min-width: 240px;
+	box-shadow: 4px 4px 10px rgba(47, 55, 113, 0.2);
+
+}
+
+.btn-text {
+	font-size: 2rem;
+	font-weight: 300;
+}
+
+//checkbox
+.custom-checkbox .custom-control-label::before {
+	border-radius: 0.25rem;
+	width: 17px;
+	height: 17px;
+}
+
+.custom-control-label {
+	position: relative;
+	margin-bottom: 0;
+	vertical-align: top;
+	padding-left: 10px;
+	margin-right: 10px;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+	text-align: center;
+	border-color: $primary;
+	background-color: $primary;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+	background-size: 90%;
+}
+
+.custom-control-label::after {
+	top: 0.6rem;
+	left: -1.2rem;
+}
+.num-value{
+	font-size:35px;
+	color:$primary;
+}
+.margin0-auto{
+	margin:0 auto;
+}
+// ------------ 미디어쿼리 ---------------
+
+// 최대 디바이스
+@media only screen and (min-width : 1824px) {}
+
+// 모바일
+@media only screen and (max-width : 768px) {}

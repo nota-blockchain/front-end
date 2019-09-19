@@ -1,7 +1,29 @@
-# front-end
-작업은 개인의 브랜치에서 하고, master에는 PR만 한다.
+# nota-frontend
 
-## bootstrap-vue 사용
-## scss 사용
-App.vue에 style.scss 임포트, 각 scss파일은 style.scss 안에 임포트 시킨다.
+## Project setup
+```
+npm install
+```
 
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
