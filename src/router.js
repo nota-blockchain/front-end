@@ -9,6 +9,7 @@ import User from './views/User.vue'
 import EducationData from './views/EducationData.vue'
 import EducationProcess from './views/EducationProcess.vue'
 import DataPrint from './views/DataPrint.vue'
+import TalkConcertVote from './views/TalkConcertVote.vue'
 
 Vue.use(Router)
 
@@ -61,6 +62,11 @@ export default new Router({
       path: '/dataPrint',
       name: 'dataPrint',
       component: DataPrint
+    },
+    {
+      path: '/talkConcertVote',
+      name: 'talkConcertVote',
+      component: TalkConcertVote
     },
     {
       path: '/about',

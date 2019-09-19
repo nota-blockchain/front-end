@@ -1,10 +1,10 @@
 <template>
   <div class="page talkConcert">
-    <GlobalNav />
+    <GlobalNavUser />
     <section class="section-container">
-      <h2>토크 콘서트 관리</h2>
+      <h2>토크 콘서트 투표</h2>
       <div class="main-box">
-        <div class="custom-label pb-3 ">강연자 투표</div>
+        <div class="custom-label pb-3 ">강연자 투표 (중복투표 가능)</div>
         <div class="mb-5">
           <b-form-group>
             <b-form-checkbox-group
@@ -15,7 +15,7 @@
             ></b-form-checkbox-group>
           </b-form-group>
         </div>
-        <div class="d-flex justify-content-center mt-5 mb-5">
+        <!-- <div class="d-flex justify-content-center mt-5 mb-5">
           <div class="user-circle m-5">
             <div class="inner-circle">
               <div>
@@ -32,7 +32,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="custom-label pb-3 mt-3 text-center">강연자 투표 결과는 9.18일 이후 공개됩니다.</div>
       </div>
       <ButtonCustom title="투표하기" />
@@ -42,12 +42,12 @@
 
 <script>
 // @ is an alias to /src
-import GlobalNav from "../components/GlobalNav";
+import GlobalNavUser from "../components/GlobalNavUser";
 import ButtonCustom from "../components/ButtonCustom";
 export default {
   name: "home",
   components: {
-    GlobalNav,
+    GlobalNavUser,
     ButtonCustom
   },
   data() {
@@ -58,7 +58,10 @@ export default {
         { text: "이정민", value: "이정민" },
         { text: "김수로", value: "김수로" },
         { text: "전지현", value: "전지현" },
-        { text: "정우성", value: "정우성" }
+        { text: "정우성", value: "정우성" },
+        { text: "김태희", value: "김태희" },
+        { text: "강유미", value: "강유미" },
+        { text: "하정우", value: "하정우" },
       ]
     };
   }

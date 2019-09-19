@@ -4,17 +4,8 @@
     <section class="section-container">
       <h2>토크 콘서트 관리</h2>
       <div class="main-box">
-        <div class="custom-label pb-3 ">강연자 투표</div>
-        <div class="mb-5">
-          <b-form-group>
-            <b-form-checkbox-group
-              id="checkbox-group-1"
-              v-model="selected"
-              :options="options"
-              name="flavour-1"
-            ></b-form-checkbox-group>
-          </b-form-group>
-        </div>
+        <div class="custom-label pb-3 ">강연자 리스트 추가</div>
+       <input type="text" class="custom-input">
         <div class="d-flex justify-content-center mt-5 mb-5">
           <div class="user-circle m-5">
             <div class="inner-circle">

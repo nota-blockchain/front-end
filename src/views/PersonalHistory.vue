@@ -41,7 +41,10 @@
           </div>
         </div>
       </div>
+      <div class="d-flex w-50 margin0-auto">
       <ButtonCustom title="승인하기" />
+      <ButtonCustom title="거절하기" />
+      </div>
     </section>
   </div>
 </template>

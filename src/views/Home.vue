@@ -37,7 +37,10 @@
           </div>
           <div class="home-right d-flex justify-content-center align-items-center">img</div>
         </div>
-        <ButtonCustom title="승인하기" />
+        <div class="d-flex w-50 margin0-auto">
+          <ButtonCustom title="승인하기" />
+          <ButtonCustom title="거절하기" />
+        </div>
       </form>
     </section>
   </div>
@@ -63,6 +66,18 @@ export default {
       eduInstitutePhone: "",
       eduMemo: ""
     };
+  },
+  methods: {
+    loadData() {
+      const baseURI = "http://docker.cloudus.io:3000/admin1";
+      this.$http.get(`${baseURI}`).then(response => {
+        console.log(response);
+        this.transactionList = response.data.result;
+      });
+    }
+  },
+  mounted() {
+    this.loadData();
   }
 };
 </script>

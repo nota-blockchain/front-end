@@ -38,10 +38,15 @@ export default {
           title: "교육과정 신청",
           path: "/educationProcess"
         },
+         {
+          title: "토크콘서트 투표",
+          path: "/talkConcertVote"
+        },
         {
           title: "증명서 및 자료출력",
           path: "/dataPrint"
         },
+        
       ]
     };
   }
