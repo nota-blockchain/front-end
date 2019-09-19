@@ -1,0 +1,19 @@
+.page.talkConcert {
+	font-size: 1.4rem;
+	display: flex;
+
+	.user-circle {
+		width: 200px;
+		height: 200px;
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		border-radius: 50%;
+	}
+
+	.inner-circle {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+}
