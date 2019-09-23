@@ -62,7 +62,7 @@ export default {
       president: "",
       eduInstituteAddress: "",
       injectCopy: "",
-      publishInstituteDate: "",
+      publishInstituteDate: "", 
       eduInstitutePhone: "",
       eduMemo: ""
     };
