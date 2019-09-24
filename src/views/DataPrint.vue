@@ -6,10 +6,10 @@
       <div class="main-box">
         <div class="data-print-box">
           <!-- <img src="../assets/Images/pdf-example.svg"> -->
-          <b-embed class="d-flex data-print-box" type="iframe" aspect="16by9" :src="url"></b-embed>
+          <b-embed class="d-flex data-print-box" aspect="16by9" :src="url"></b-embed>
         </div>
       </div>
-      <ButtonCustom title="다운로드" @click.native="downloadWithAxios" />
+      <ButtonCustom title="다운로드" @click.native="download" />
     </section>
   </div>
 </template>
@@ -25,10 +25,15 @@ export default {
     GlobalNavUser,
     ButtonCustom
   },
+  methods: {
+    async download() {
+      window.location.href = this.url + '?download'
+    }
+  },
   data() {
     return {
       url:
-        "https://cafeptthumb-phinf.pstatic.net/20120611_289/kkas_nknk55_1339391180925I3qnD_JPEG/%B0%ED%BE%E7%C0%CC9.jpg?type=w740"
+        "http://docker.cloudus.io:3000/pdf"
     };
   }
   // methods: {
