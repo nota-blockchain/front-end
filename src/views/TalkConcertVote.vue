@@ -6,7 +6,7 @@
       <div class="main-box">
         <div class="custom-label pb-3">강연자 투표 (중복투표 가능)</div>
         <div class="mb-5 mt-5">
-          <b-form-group>
+          <b-form-group >
             <b-form-checkbox-group
               id="checkbox-group-1"
               v-model="selected"
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <ButtonCustom v-if="!isVoteCompleted" title="투표하기" />
+      <ButtonCustom v-if="!isVoteCompleted" v-on:click.native="writeVote" title="투표하기" />
       <ButtonCustom v-if="isVoteCompleted" title="이더스캔에서 보기" />
     </section>
   </div>
@@ -45,6 +45,8 @@
 import GlobalNavUser from "../components/GlobalNavUser";
 import ButtonCustom from "../components/ButtonCustom";
 import BarChart from "../components/BarChart";
+import Axios from 'axios';
+
 export default {
   name: "home",
   components: {
@@ -52,55 +54,28 @@ export default {
     ButtonCustom,
     BarChart
   },
+  methods: {
+    async writeVote() {
+      for(let i in this.selected) {
+        await Axios.post('http://docker.cloudus.io:3000/vote?number=' + this.selected[i]);
+      }
+    }
+  },
+  async created() {
+    const { data } = await Axios.get('http://docker.cloudus.io:3000/vote')
+    for(const i in data) {
+      const { name } = data[i];
+      this.voteInfoArray.push(data[i]);
+      this.options.push({ text: name, value: i });
+    }
+  },
   data() {
     return {
       selected: [], // Must be an array reference!
-      isVoteCompleted: true, // 투표 완료 상태
+      isVoteCompleted: false, // 투표 완료 상태
       //dummy data
-      voteInfoArray: [
-        {
-          affiliation: "삼성전자 연구원",
-          academicBackground: "하버드 컴공과",
-          title: "블록체인 핵심이론",
-          article:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        },
-        {
-          affiliation: "삼성전자 연구원",
-          academicBackground: "하버드 컴공과",
-          title: "블록체인 핵심이론",
-          article:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        },
-        {
-          affiliation: "삼성전자 연구원",
-          academicBackground: "하버드 컴공과",
-          title: "블록체인 핵심이론",
-          article:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        },
-        {
-          affiliation: "삼성전자 연구원",
-          academicBackground: "하버드 컴공과",
-          title: "블록체인 핵심이론",
-          article:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        },
-        {
-          affiliation: "삼성전자 연구원",
-          academicBackground: "하버드 컴공과",
-          title: "블록체인 핵심이론",
-          article:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        }
-      ],
-      options: [
-        { text: "박정원", value: "박정원" },
-        { text: "이정민", value: "이정민" },
-        { text: "김수로", value: "김수로" },
-        { text: "전지현", value: "전지현" },
-        { text: "정우성", value: "정우성" }
-      ]
+      voteInfoArray: [],
+      options: []
     };
   }
 };
