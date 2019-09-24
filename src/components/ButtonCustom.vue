@@ -1,11 +1,11 @@
 <template>
-<section class="custom-btn-wrap">
-   <button pill class="custom-btn btn-text">{{title}}</button>
-</section>
+  <section class="custom-btn-wrap">
+    <button pill class="custom-btn btn-text" >{{title}}</button>
+  </section>
 </template>
 <script>
 export default {
-  props: ['title'],
+  props: ["title",],
   data() {
     return {};
   },
@@ -14,5 +14,4 @@ export default {
 };
 </script>
 <style lang="scss">
-
 </style>

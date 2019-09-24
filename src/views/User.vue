@@ -11,25 +11,45 @@
           <div class="d-flex align-items-center justify-content-center w-100 mb-3">
             <span class="user-label">초등학교</span>
             <input type="text" v-model="form.school1" class="custom-input mr-3" placeholder="학교이름" />
-            <input type="text" v-model="form.school1Date" class="custom-input mr-3" placeholder="졸업년월" />
+            <input
+              type="text"
+              v-model="form.school1Date"
+              class="custom-input mr-3"
+              placeholder="졸업년월"
+            />
             <span class="user-label text-center text-gray">해당없음</span>
           </div>
           <div class="d-flex align-items-center justify-content-center w-100 mb-3">
             <span class="user-label">중학교</span>
             <input type="text" v-model="form.school2" class="custom-input mr-3" placeholder="학교이름" />
-            <input type="text" v-model="form.school2Date" class="custom-input mr-3" placeholder="졸업년월" />
+            <input
+              type="text"
+              v-model="form.school2Date"
+              class="custom-input mr-3"
+              placeholder="졸업년월"
+            />
             <span class="user-label text-center text-gray">해당없음</span>
           </div>
           <div class="d-flex align-items-center justify-content-center w-100 mb-3">
             <span class="user-label">고등학교</span>
             <input type="text" v-model="form.school3" class="custom-input mr-3" placeholder="학교이름" />
-            <input type="text" v-model="form.school3Date" class="custom-input mr-3" placeholder="졸업년월" />
+            <input
+              type="text"
+              v-model="form.school3Date"
+              class="custom-input mr-3"
+              placeholder="졸업년월"
+            />
             <span class="user-label text-center text-gray">해당없음</span>
           </div>
           <div class="d-flex align-items-center justify-content-center w-100 mb-3">
             <span class="user-label">대학교</span>
             <input type="text" v-model="form.school4" class="custom-input mr-3" placeholder="학교이름" />
-            <input type="text" v-model="form.school4Date" class="custom-input mr-3" placeholder="졸업년월" />
+            <input
+              type="text"
+              v-model="form.school4Date"
+              class="custom-input mr-3"
+              placeholder="졸업년월"
+            />
             <input type="text" v-model="form.school4Depart" class="custom-input" placeholder="전공학과" />
           </div>
           <!-- 경력 -->
@@ -140,11 +160,12 @@
             <div class="modal-label">퇴사일 : {{form.work1ResignDate}}</div>
             <hr />
             <div class="d-flex">
-              <ButtonCustom title="취소" class="mr-3"/>
-              <ButtonCustom v-on:click.native="writeResume" title="승인"/>
+              <div @click="$bvModal.hide('modal-lg')">
+                <ButtonCustom title="취소" class="mr-3" />
+              </div>
+              <ButtonCustom title="승인" @click.native="writeResume" />
             </div>
           </div>
-          
         </div>
       </b-modal>
     </section>
@@ -155,7 +176,7 @@
 // @ is an alias to /src
 import GlobalNavUser from "../components/GlobalNavUser";
 import ButtonCustom from "../components/ButtonCustom";
-import Axios from 'axios';
+import Axios from "axios";
 
 export default {
   name: "home",
@@ -165,8 +186,16 @@ export default {
   },
   methods: {
     async writeResume() {
-      const { data } = await Axios.post('http://docker.cloudus.io:3000/writeresume', this.form)
-      console.log(data);
+      try {
+        const { data } = await Axios.post(
+          "http://docker.cloudus.io:3000/writeresume",
+          this.form
+        );
+        console.log("POST success", data);
+        this.$router.push('DataPrint')
+      } catch (error) {
+        console.log("POST error", error);
+      }
     }
   },
   data() {
@@ -201,7 +230,6 @@ export default {
         work2MajorWork: "",
         work3MajorWork: ""
       }
-
     };
   }
 };
