@@ -16,7 +16,7 @@
             ></b-form-checkbox-group>
           </b-form-group>
         </div>
-        <div class="vote-info-wrap" v-if="!isVoteCompleted">
+        <div class="vote-info-wrap" v-if="isVoteCompleted">
           <div class="vote-info-box" v-for="(item,i) in voteInfoArray" key="i">
             <hr />
             <p>소속 : {{item.affiliation}}</p>

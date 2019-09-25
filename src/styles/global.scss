@@ -309,7 +309,7 @@ a {
 }
 
 .modal-label{
-	font-size:18px;
+	font-size:16px;
 	padding:0, 20px;
 }
 .data-print-box{
@@ -318,7 +318,13 @@ a {
 	align-items:center;
 	min-height:500px;
 }
-
+.w-33{
+	width:33.3%
+}
+.font-value{
+	color:#59629E;
+	font-weight:500;
+}
 // ------------ 미디어쿼리 ---------------
 
 // 최대 디바이스

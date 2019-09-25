@@ -142,22 +142,128 @@
       <b-modal id="modal-lg" size="lg" title="변경사항 확인하기" hide-footer hide-header>
         <div class="mt-5 mb-3 d-flex justify-content-center">
           <div class>
-            <div class="modal-label">초등학교 : {{form.school1}}</div>
-            <div class="modal-label">졸업일 : {{form.school1Date}}</div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                초등학교 :
+                <span class="font-value">{{form.school1}}</span>
+              </div>
+              <div class="modal-label">
+                졸업일 :
+                <span class="font-value">{{form.school1Date}}</span>
+              </div>
+            </div>
             <hr />
-            <div class="modal-label">중학교 : {{form.school2}}</div>
-            <div class="modal-label">졸업일 : {{form.school2Date}}</div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                중학교 :
+                <span class="font-value">{{form.school2}}</span>
+              </div>
+              <div class="modal-label">
+                졸업일 :
+                <span class="font-value">{{form.school2Date}}</span>
+              </div>
+            </div>
             <hr />
-            <div class="modal-label">고등학교 : {{form.school3}}</div>
-            <div class="modal-label">졸업일 : {{form.school3Date}}</div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                고등학교 :
+                <span class="font-value">{{form.school3}}</span>
+              </div>
+              <div class="modal-label">
+                졸업일 :
+                <span class="font-value">{{form.school3Date}}</span>
+              </div>
+            </div>
             <hr />
-            <div class="modal-label">대학교 : {{form.school4}}</div>
-            <div class="modal-label">졸업일 : {{form.school4Date}}</div>
-            <div class="modal-label">전공학과 : {{form.school4Depart}}</div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                대학교 :
+                <span class="font-value">{{form.school4}}</span>
+              </div>
+              <div class="modal-label">
+                졸업일 :
+                <span class="font-value">{{form.school4Date}}</span>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="modal-label w-50"></div>
+              <div class="modal-label">
+                전공학과 :
+                <span class="font-value">{{form.school4Depart}}</span>
+              </div>
+            </div>
             <hr />
-            <div class="modal-label">{{form.work1Name}}</div>
-            <div class="modal-label">입사일 : {{form.work1JoinDate}}</div>
-            <div class="modal-label">퇴사일 : {{form.work1ResignDate}}</div>
+            <div class="modal-label">
+              <b>{{form.work1Name}}</b>
+            </div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                입사일 :
+                <span class="font-value">{{form.work1JoinDate}}</span>
+              </div>
+              <div class="modal-label">
+                퇴사일 :
+                <span class="font-value">{{form.work1ResignDate}}</span>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                부서 및 직위 :
+                <span class="font-value">{{form.work1Position}}</span>
+              </div>
+              <div class="modal-label">
+                담당 업무 :
+                <span class="font-value">{{form.work1MajorWork}}</span>
+              </div>
+            </div>
+            <hr />
+            <div class="modal-label">
+              <b>{{form.work2Name}}</b>
+            </div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                입사일 :
+                <span class="font-value">{{form.work2JoinDate}}</span>
+              </div>
+              <div class="modal-label">
+                퇴사일 :
+                <span class="font-value">{{form.work2ResignDate}}</span>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                부서 및 직위 :
+                <span class="font-value">{{form.work2Position}}</span>
+              </div>
+              <div class="modal-label">
+                담당 업무 :
+                <span class="font-value">{{form.work2MajorWork}}</span>
+              </div>
+            </div>
+            <hr />
+            <div class="modal-label">
+              <b>{{form.work3Name}}</b>
+            </div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                입사일 :
+                <span class="font-value">{{form.work3JoinDate}}</span>
+              </div>
+              <div class="modal-label">
+                퇴사일 :
+                <span class="font-value">{{form.work3ResignDate}}</span>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="modal-label w-50">
+                부서 및 직위 :
+                <span class="font-value">{{form.work3Position}}</span>
+              </div>
+              <div class="modal-label">
+                담당 업무 :
+                <span class="font-value">{{form.work3MajorWork}}</span>
+              </div>
+            </div>
             <hr />
             <div class="d-flex">
               <div @click="$bvModal.hide('modal-lg')">
@@ -192,7 +298,7 @@ export default {
           this.form
         );
         console.log("POST success", data);
-        this.$router.push('DataPrint')
+        this.$router.push("DataPrint");
       } catch (error) {
         console.log("POST error", error);
       }
@@ -206,7 +312,7 @@ export default {
         school2: "",
         school3: "",
         school4: "",
-        school1Date: "",
+        school1Date: "1993-03-19",
         school2Date: "",
         school3Date: "",
         school4Date: "",
