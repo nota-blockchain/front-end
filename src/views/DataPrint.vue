@@ -5,8 +5,8 @@
       <h2>증명서 및 자료 출력</h2>
       <div class="main-box">
         <div class="data-print-box">
-          <!-- <img src="../assets/Images/pdf-example.svg"> -->
-          <b-embed class="d-flex data-print-box" type="iframe" aspect="16by9" :src="url"></b-embed>
+          <img src="../assets/Images/pdf-example.svg">
+          <!-- <b-embed class="d-flex data-print-box" type="iframe" aspect="16by9" :src="url"></b-embed> -->
         </div>
       </div>
       <ButtonCustom title="다운로드" @click.native="downloadWithAxios" />
