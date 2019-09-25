@@ -23,7 +23,7 @@
             <p>학력 : {{item.academicBackground}}</p>
             <p>제목 : {{item.title}}</p>
             <hr />
-            <p class="just">{{item.article}}</p>
+            <p class="">{{item.article}}</p>
             <hr />
           </div>
         </div>
