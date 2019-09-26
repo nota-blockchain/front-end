@@ -6,7 +6,7 @@
       <div class="main-box">
         <div class="custom-label pb-3">강연자 투표 (중복투표 가능)</div>
         <div class="mb-5 mt-5">
-          <b-form-group >
+          <b-form-group>
             <b-form-checkbox-group
               id="checkbox-group-1"
               v-model="selected"
@@ -16,14 +16,14 @@
             ></b-form-checkbox-group>
           </b-form-group>
         </div>
-        <div class="vote-info-wrap" v-if="isVoteCompleted">
+        <div class="vote-info-wrap" v-if="!isVoteCompleted">
           <div class="vote-info-box" v-for="(item,i) in voteInfoArray" key="i">
             <hr />
             <p>소속 : {{item.affiliation}}</p>
             <p>학력 : {{item.academicBackground}}</p>
             <p>제목 : {{item.title}}</p>
             <hr />
-            <p class="">{{item.article}}</p>
+            <p class>{{item.article}}</p>
             <hr />
           </div>
         </div>
@@ -45,7 +45,7 @@
 import GlobalNavUser from "../components/GlobalNavUser";
 import ButtonCustom from "../components/ButtonCustom";
 import BarChart from "../components/BarChart";
-import Axios from 'axios';
+import Axios from "axios";
 
 export default {
   name: "home",
@@ -56,19 +56,27 @@ export default {
   },
   methods: {
     async writeVote() {
-      for(let i in this.selected) {
-        await Axios.post('http://docker.cloudus.io:3000/vote?number=' + this.selected[i]);
+      for (let i in this.selected) {
+        await Axios.post(
+          "http://docker.cloudus.io:3000/vote?number=" + this.selected[i]
+        );
       }
+      this.isVoteCompleted = true;
     }
   },
   async created() {
-    const { data } = await Axios.get('http://docker.cloudus.io:3000/vote')
-    for(const i in data) {
+    const { data } = await Axios.get("http://docker.cloudus.io:3000/vote");
+    for (const i in data) {
       const { name } = data[i];
       this.voteInfoArray.push(data[i]);
       this.options.push({ text: name, value: i });
     }
   },
+
+  mounted() {
+    console.log("POST 확인 ::", this.writeVote());
+  },
+
   data() {
     return {
       selected: [], // Must be an array reference!
