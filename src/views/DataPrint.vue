@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center align-items-center">
-        <a href="http://www.naver.com" target="_blank">
+        <a href="https://etherscan.io/address/0xf9c3A6d486f88630B97cc532A234eddbe475c36d" target="_blank">
       <ButtonCustom title="이더스캔 확인" class="mr-5"/>
       </a>
       <ButtonCustom title="다운로드" @click.native="download" class="power-fix"/>

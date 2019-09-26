@@ -35,7 +35,9 @@
         </div>
       </div>
       <ButtonCustom v-if="!isVoteCompleted" v-on:click.native="writeVote" title="투표하기" />
-      <ButtonCustom v-if="isVoteCompleted" title="이더스캔에서 보기" />
+      <a>
+      <ButtonCustom v-if="isVoteCompleted" title="이더스캔에서 보기" url="https://etherscan.io/address/0x7d7E9f5Fdca3AB313D1a8b753f1686318eb25dE9"/>
+      </a>
     </section>
   </div>
 </template>
@@ -55,13 +57,25 @@ export default {
     BarChart
   },
   methods: {
+    // async writeVote() {
+    //   for (let i in this.selected) {
+    //     await Axios.post(
+    //       "http://docker.cloudus.io:3000/vote?number=" + this.selected[i]
+    //     );
+    //   }
+    //   this.isVoteCompleted = true;
+    // }
     async writeVote() {
-      for (let i in this.selected) {
-        await Axios.post(
-          "http://docker.cloudus.io:3000/vote?number=" + this.selected[i]
-        );
+      try {
+        for (let i in this.selected) {
+          await Axios.post(
+            "http://docker.cloudus.io:3000/vote?number=" + this.selected[i]
+          );
+          this.isVoteCompleted = true;
+        }
+      } catch (error) {
+        console.log("POST error", error);
       }
-      this.isVoteCompleted = true;
     }
   },
   async created() {
@@ -74,7 +88,10 @@ export default {
   },
 
   mounted() {
+    this.isVoteCompleted;
     console.log("POST 확인 ::", this.writeVote());
+
+    console.log("컴플릿 상태", this.isVoteCompleted);
   },
 
   data() {

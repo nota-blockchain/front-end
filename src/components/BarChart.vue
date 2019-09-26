@@ -6,7 +6,7 @@ export default {
   data() {
     return {
       datacollection: {
-        labels: ["vote1", "vote2", "vote3", "vote4", "vote5"],
+        labels: ["James Lee", "Mark Kim", "Jun Park", "Yuna Lim", "Olivia Ha"],
         datasets: [
           {
             label: "투표",
