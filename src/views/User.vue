@@ -298,7 +298,7 @@ export default {
           this.form
         );
         console.log("POST success", data);
-        this.$router.push("DataPrint");
+        this.$router.push({ path: 'DataPrint', query: { uuid: data.pdf }});
       } catch (error) {
         console.log("POST error", error);
       }

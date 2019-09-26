@@ -1,17 +1,11 @@
 <template>
   <div class="page user">
     <GlobalNavUser />
-    <section class="section-container" v-if="generateKey">
-      <div class="main-box">
-        <!-- 학력 -->
-      </div>
-      <!-- <ButtonCustom v-b-modal.modal-lg title="생성하기" /> -->
-    </section>
     <section class="section-container">
       <h2>증명서 및 자료 출력</h2>
       <div class="main-box">
         <div class="data-print-box">
-          <img src="../assets/Images/pdf-example.svg" />
+          <!-- <img src="../assets/Images/pdf-example.svg" /> -->
           <!-- <b-embed class="d-flex data-print-box" type="iframe" aspect="16by9" :src="url"></b-embed> -->
           <!-- <img src="../assets/Images/pdf-example.svg"> -->
           <b-embed
@@ -96,7 +90,7 @@ export default {
         work2MajorWork: "",
         work3MajorWork: ""
       },
-      generateKey: ""
+      generateKey: this.$route.query.uuid
     };
   }
   // methods: {
