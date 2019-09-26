@@ -9,6 +9,11 @@
         <!-- 학력 -->
         <div class="justify-contents-center">
           <div class="d-flex align-items-center justify-content-center w-100 mb-3">
+            <span class="user-label">성명</span>
+            <input type="text" v-model="form.username" class="custom-input mr-3" placeholder="한글" />
+            <input type="text" v-model="form.usernameEn" class="custom-input mr-3" placeholder="영문" />
+          </div>
+          <div class="d-flex align-items-center justify-content-center w-100 mb-3">
             <span class="user-label">초등학교</span>
             <input type="text" v-model="form.school1" class="custom-input mr-3" placeholder="학교이름" />
             <input
@@ -307,7 +312,9 @@ export default {
   data() {
     return {
       form: {
-        userName: "정우성",
+        username: "정우성",
+        usernameEn: '',
+        
         school1: "한강초등학교",
         school2: "",
         school3: "",
